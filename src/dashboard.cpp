@@ -265,14 +265,14 @@ void Dashboard::draw(glm::mat4 VP, int view) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    if(view==1 || view==3){
+    if(view == 1 || view == 2 || view == 3){
         // draw3DObject(this->object);
         draw3DObject(this->object2);
     }
 }
 
-void Dashboard::set_position(float x, float y) {
-    this->position = glm::vec3(x, y, 0);
+void Dashboard::set_position(float x, float y, float z) {
+    this->position = glm::vec3(x, y, z);
 }
 
 

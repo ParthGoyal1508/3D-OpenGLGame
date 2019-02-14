@@ -14,7 +14,7 @@ public:
     float rotation;
     float rotation2;
     float rotation3;
-    int checkpoint = 1;
+    int checkpoint=0;
     void tick();
 private:
     VAO *object;

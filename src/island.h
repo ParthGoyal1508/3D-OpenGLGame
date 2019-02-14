@@ -13,6 +13,7 @@ public:
     void set_position(float x, float y, float z);
     float rotation;
     int ischeckpoint=0;
+    int checkpointcomplete=0;
     void make_ellipse(float x, float y, float z,float radius1, float radius2, float radius3);
     void make_cuboid(float x, float y, float z);
     void make_sphere(float x, float y, float z, float radius);
@@ -21,6 +22,7 @@ private:
     VAO *object;
     VAO *object2;
     VAO *object3;
+    VAO *object4;
 
 };
 

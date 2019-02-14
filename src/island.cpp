@@ -244,6 +244,7 @@ Island::Island(float x, float y, float z, color_t color)
     this->object = create3DObject(GL_TRIANGLES,6*40*80, vertex_buffer_data2, color, GL_FILL);
     this->object2 = create3DObject(GL_TRIANGLES,10 * 3, vertex_buffer_data3, COLOR_ENEMY, GL_FILL);
     this->object3 = create3DObject(GL_TRIANGLES,6*10*10, vertex_buffer_data4, COLOR_DASHBOARD, GL_LINE);
+    this->object4 = create3DObject(GL_TRIANGLES,6*10*10, vertex_buffer_data4, COLOR_BLUE, GL_LINE);
 
 }
 
@@ -255,12 +256,15 @@ void Island::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    if(this->ischeckpoint == 1)
+    if(this->checkpointcomplete == 0 && this->ischeckpoint == 0)
     {
-        draw3DObject(this->object);
-        draw3DObject(this->object2);
         draw3DObject(this->object3);
     }
+    if(this->checkpointcomplete == 0 && this->ischeckpoint == 1){
+         draw3DObject(this->object4);
+    }
+    draw3DObject(this->object);
+    draw3DObject(this->object2);
     
 }
 

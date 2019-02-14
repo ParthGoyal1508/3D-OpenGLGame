@@ -25,7 +25,9 @@ Water sea;
 Dashboard dashboard;
 vector<Island> island;
 Navigation navigation;
+vector<Sphere> bomb;
 Sphere sph;
+vector<int> checkpoint = {7,14,21,1,8,15,22,2,9,16,23,3,10,17,24,4,11,18,25,5,12,19,26,6,13,20,27};
 
 
 const double pi = 4 * atan(1);
@@ -33,6 +35,7 @@ int view=1;
 
 bool keypress = false;
 bool keypress_c = false;
+bool keypress_b = false;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0, camera_x = 0,camera_y = 8,camera_z = 18,target_x = 0 ,target_y = 8, target_z = 0;
@@ -79,8 +82,52 @@ void draw() {
     for(int i=0;i<island.size();i++)
         island[i].draw(VP);
     navigation.draw(VP);
+    for(int i=0;i<bomb.size();i++)
+        bomb[i].draw(VP);
     //sph.draw(VP);
     // cout << airplane.position.y <<endl;
+}
+
+bool bomb_collision(int i){
+    // cout << "X "<<bomb[i].position.x << " " <<island[navigation.checkpoint].position.x <<endl;
+    // cout << "Z "<<bomb[i].position.z << " " <<island[navigation.checkpoint].position.z <<endl;
+    if((bomb[i].position.x < island[navigation.checkpoint].position.x + 10) && (bomb[i].position.x > island[navigation.checkpoint].position.x - 10))
+        if((bomb[i].position.z < island[navigation.checkpoint].position.z + 10) && (bomb[i].position.z > island[navigation.checkpoint].position.z - 10))
+            if(bomb[i].position.y < island[navigation.checkpoint].position.y + 85)
+                return true;
+    return false;
+}
+
+void checkbomb_collision(){
+            // cout << "should change\n";
+            // cout << "checkpoint no "<<navigation.checkpoint <<endl;
+            // cout << "is checkpoint "<< island[navigation.checkpoint].ischeckpoint <<endl;
+    for(int i=0;i<bomb.size();i++){
+        if(bomb_collision(i)){
+            cout << "change\n";
+            bomb.erase(bomb.begin()+i);
+            island[navigation.checkpoint].checkpointcomplete = 1;
+            island[navigation.checkpoint].ischeckpoint = 0;
+            int j = checkpoint[0];
+            checkpoint.erase(checkpoint.begin()+0); 
+            navigation.checkpoint = j;
+            island[navigation.checkpoint].ischeckpoint = 1;
+        }
+    }
+}
+
+
+void bomb_gravity(){
+    for(int i=0;i<bomb.size();i++){
+        if(bomb[i].position.y < sea.position.y)
+            bomb.erase(bomb.begin()+i);
+        else
+            bomb[i].set_position(bomb[i].position.x, bomb[i].position.y-0.2,bomb[i].position.z);
+    }
+}
+
+void release_bomb(){
+    bomb.push_back(Sphere(airplane.position.x, airplane.position.y,airplane.position.z,1,COLOR_RED));
 }
 
 void tick_input(GLFWwindow *window) {
@@ -89,6 +136,7 @@ void tick_input(GLFWwindow *window) {
     int d  = glfwGetKey(window, GLFW_KEY_D);
     int w  = glfwGetKey(window, GLFW_KEY_W);
     int s  = glfwGetKey(window, GLFW_KEY_S);
+    int b  = glfwGetKey(window, GLFW_KEY_B);
     int left = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up = glfwGetKey(window, GLFW_KEY_UP);
@@ -134,6 +182,14 @@ void tick_input(GLFWwindow *window) {
     if (down){
         airplane.move_backward();
     }
+
+    if (b && !keypress_b){
+        keypress_b = true;
+        release_bomb();
+    }
+    if(b == GLFW_RELEASE && keypress_b == true){
+        keypress_b = false;
+    }
     
 }
 
@@ -142,8 +198,6 @@ void set_navigation(){
     double posx= island[i].position.x;
     double posz= island[i].position.z;
     double angle = acos((posz-navigation.position.z)*(-1)/sqrt(((posx-navigation.position.x)*(posx-navigation.position.x))+((posz-navigation.position.z)*(posz-navigation.position.z)))) * (180/pi);   
-    // cout << posz-navigation.position.z <<endl;
-    // cout << sqrt((posx-navigation.position.x)*(posx-navigation.position.x))+((posz-navigation.position.z)*(posz-navigation.position.z))<<endl;
     angle = abs(angle);
     if(posx > navigation.position.x)
         angle *= -1;
@@ -171,14 +225,13 @@ void view_camera(){
         target_y = airplane.position.y + 8;
         target_z = airplane.position.z;
 
-        dashboard.position.x = target_x ;
-        dashboard.position.y = target_y + 10;
-        dashboard.position.z = target_z ;
+        dashboard.set_position(target_x, target_y + 10, target_z);
+        // dashboard.position.x = target_x ;
+        // dashboard.position.y = target_y + 10;
+        // dashboard.position.z = target_z ;
         dashboard.rotation = airplane.rotation;
 
-        navigation.set_position(airplane.position.x - 5 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 5 * cos(airplane.rotation * (pi/180)));
-        // navigation.rotation = airplane.rotation;
-        // navigation.rotation = 20;
+        navigation.set_position(airplane.position.x - 5 * sin(airplane.rotation * (pi/180)),target_y + 12,airplane.position.z  - 5 * cos(airplane.rotation * (pi/180)));
     }
 
     //camera view
@@ -191,30 +244,29 @@ void view_camera(){
         target_y = airplane.position.y ;
         target_z = airplane.position.z; 
 
-        navigation.set_position(airplane.position.x - 5 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 5 * cos(airplane.rotation * (pi/180)));
-        // navigation.rotation = airplane.rotation;
-        // navigation.rotation = 20;
-
+        dashboard.set_position(target_x + 5 * sin(airplane.rotation * (pi/180)), target_y + 2, target_z + 5 * cos(airplane.rotation * (pi/180)));
+        dashboard.rotation = airplane.rotation;
+        // dashboard.set_position(airplane.position.x,airplane.position.y + 2 ,airplane.position.z);
+        navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
     }
 
     //plane view
     else if( view == 3){
-        camera_x = airplane.position.x ;
+        camera_x = airplane.position.x - 1 * sin(airplane.rotation * (pi/180));
         camera_y = airplane.position.y ;
-        camera_z = airplane.position.z;
+        camera_z = airplane.position.z - 1 * cos(airplane.rotation * (pi/180));
 
         target_x = airplane.position.x - 20 * sin(airplane.rotation * (pi/180)) ;
         target_y = airplane.position.y ;
         target_z = airplane.position.z - 20 * cos(airplane.rotation * (pi/180));
 
-        dashboard.position.x = target_x;
-        dashboard.position.y = target_y + 7;
-        dashboard.position.z = target_z ;
+        // dashboard.position.x = target_x;
+        // dashboard.position.y = target_y + 7;
+        // dashboard.position.z = target_z ;
+        dashboard.set_position(target_x, target_y + 7, target_z);
         dashboard.rotation = airplane.rotation;
 
-       navigation.set_position(airplane.position.x - 5 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 5 * cos(airplane.rotation * (pi/180)));
-        // navigation.rotation = airplane.rotation;
-        // navigation.rotation = 20;
+       navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
 
     }
 
@@ -228,6 +280,9 @@ void view_camera(){
         target_y = airplane.position.y;
         target_z = airplane.position.z;
 
+       navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y ,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
+
+
     }
 
     //helicopter-cam view
@@ -240,6 +295,8 @@ void view_camera(){
 void tick_elements() {
     view_camera();
     set_navigation();
+    bomb_gravity();
+    checkbomb_collision();
     // navigation.tick();
     airplane.tick();
     for(int i=0;i<island.size();i++)
@@ -282,8 +339,8 @@ void initGL(GLFWwindow *window, int width, int height) {
         double z = fRand(0,3000);
         island.push_back(Island(x,-140,z, COLOR_GREEN));
     }
-    cout << island[1].position.x << " "<< island[1].position.y << " "<< island[1].position.z <<endl;
-    island[1].ischeckpoint = 1;
+    island[0].ischeckpoint = 1;
+    // navigation.checkpoint = 0;
     sph = Sphere(0,0,-100,10,COLOR_ENEMY);
     navigation = Navigation(0,0,-100,COLOR_ENEMY);
 
