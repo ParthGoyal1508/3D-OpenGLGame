@@ -26,6 +26,8 @@ Dashboard dashboard;
 vector<Island> island;
 Navigation navigation;
 vector<Sphere> bomb;
+vector<Ellipse> missiles;
+vector<Ellipse> airplane_missiles;
 Sphere sph;
 vector<int> checkpoint = {7,14,21,1,8,15,22,2,9,16,23,3,10,17,24,4,11,18,25,5,12,19,26,6,13,20,27};
 
@@ -36,6 +38,7 @@ int view=1;
 bool keypress = false;
 bool keypress_c = false;
 bool keypress_b = false;
+bool keypress_m = false;
 
 float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
 float camera_rotation_angle = 0, camera_x = 0,camera_y = 8,camera_z = 18,target_x = 0 ,target_y = 8, target_z = 0;
@@ -84,8 +87,54 @@ void draw() {
     navigation.draw(VP);
     for(int i=0;i<bomb.size();i++)
         bomb[i].draw(VP);
+    for(int i=0;i<missiles.size();i++)
+        missiles[i].draw(VP);
+    for(int i=0;i<airplane_missiles.size();i++)
+        airplane_missiles[i].draw(VP);
     //sph.draw(VP);
     // cout << airplane.position.y <<endl;
+}
+
+int increment;
+
+void missile_move(){
+    for(int i=0;i<missiles.size();i++){
+        Ellipse missile = missiles[i];
+
+        if(missile.position.x < (island[navigation.checkpoint].position.x - 400 ) || missile.position.x > (island[navigation.checkpoint].position.x + 400) || missile.position.y < (island[navigation.checkpoint].position.y - 400 ) || missile.position.y > (island[navigation.checkpoint].position.y + 400 ))
+            missiles.erase(missiles.begin()+i);
+
+        missiles[i].set_position(missile.position.x - 4 * sin((missile.theta) *(pi/180)) * sin(missile.phi * (pi/180)), missile.position.y + 4 * cos(missile.theta *(pi/180)), missile.position.z - 4 * sin((missile.theta) *(pi/180)) * cos(missile.phi * (pi/180)));
+    }
+}
+
+void missile_release(){
+    increment = (increment+1)%60;
+    if(increment == 0){
+        if((airplane.position.x < island[navigation.checkpoint].position.x + 400) &&(airplane.position.x > island[navigation.checkpoint].position.x - 400)){
+            if((airplane.position.z < island[navigation.checkpoint].position.z + 400) &&(airplane.position.z > island[navigation.checkpoint].position.z - 400)){
+                int i = navigation.checkpoint;
+
+                Ellipse ellipse =Ellipse(island[i].position.x,island[i].position.y+85,island[i].position.z,1,1,1,COLOR_RED);
+
+                double posx= island[i].position.x;
+                double posy= island[i].position.y;
+                double posz= island[i].position.z;
+
+                double angle = acos((airplane.position.z -posz)*(-1)/sqrt(((posx-airplane.position.x)*(posx-airplane.position.x))+((posz-airplane.position.z)*(posz-airplane.position.z)))) * (180/pi);   
+                
+                angle = abs(angle);
+                if(posx < airplane.position.x)
+                    angle *= -1;
+                ellipse.phi = angle;
+                
+                angle = acos((airplane.position.y - (posy+90))/sqrt((posx-airplane.position.x)*(posx-airplane.position.x)+((posy+90)-airplane.position.y)*((posy+90)-airplane.position.y)+(posz-airplane.position.z)*(posz-airplane.position.z)))  * (180/pi);
+                ellipse.theta = angle;
+
+                missiles.push_back(ellipse);
+            }        
+        }
+    }
 }
 
 bool bomb_collision(int i){
@@ -116,6 +165,29 @@ void checkbomb_collision(){
     }
 }
 
+bool airplane_missilecollision(int i){
+    Ellipse missile = airplane_missiles[i];
+    if((missile.position.x < island[navigation.checkpoint].position.x + 10) && (missile.position.x > island[navigation.checkpoint].position.x - 10))
+        if((missile.position.z < island[navigation.checkpoint].position.z + 10) && (missile.position.z > island[navigation.checkpoint].position.z - 10))
+            if(missile.position.y < island[navigation.checkpoint].position.y + 95)
+                return true;
+    return false;
+}
+
+void checkairplanemissile_collision(){
+     for(int i=0;i<airplane_missiles.size();i++){
+        if(airplane_missilecollision(i)){
+            cout << "change\n";
+            airplane_missiles.erase(airplane_missiles.begin()+i);
+            island[navigation.checkpoint].checkpointcomplete = 1;
+            island[navigation.checkpoint].ischeckpoint = 0;
+            int j = checkpoint[0];
+            checkpoint.erase(checkpoint.begin()+0); 
+            navigation.checkpoint = j;
+            island[navigation.checkpoint].ischeckpoint = 1;
+        }
+    }
+}
 
 void bomb_gravity(){
     for(int i=0;i<bomb.size();i++){
@@ -130,6 +202,40 @@ void release_bomb(){
     bomb.push_back(Sphere(airplane.position.x, airplane.position.y,airplane.position.z,1,COLOR_RED));
 }
 
+void airplane_missilemove(){
+    for(int i=0;i<airplane_missiles.size();i++){
+        Ellipse missile = airplane_missiles[i];
+        if(missile.position.x < (island[navigation.checkpoint].position.x - 400 ) || missile.position.x > (island[navigation.checkpoint].position.x + 400) || missile.position.y < (island[navigation.checkpoint].position.y - 400 ) || missile.position.y > (island[navigation.checkpoint].position.y + 400 ))
+            airplane_missiles.erase(airplane_missiles.begin()+i);
+        airplane_missiles[i].set_position(missile.position.x - 3 * sin(missile.theta * (pi/180)) * sin(missile.phi * (pi/180)), missile.position.y - 3 * cos(missile.theta * (pi/180)), missile.position.z - 3 * sin(missile.theta * (pi/180)) * cos(missile.phi * (pi/180)));
+    }
+}
+
+void airplane_releasemissile(){
+
+    int i = navigation.checkpoint;
+    double posx= island[i].position.x;
+    double posy= island[i].position.y;
+    double posz= island[i].position.z;
+
+    if(airplane.position.x > (posx - 400) && airplane.position.x < (posx+400) && airplane.position.z > (posz - 400) && airplane.position.z < (posz + 400)){
+        Ellipse missile = Ellipse(airplane.position.x, airplane.position.y, airplane.position.z,2,1,1,COLOR_BLUE);
+
+        double angle = acos((posz - airplane.position.z)*(-1)/sqrt(((posx-airplane.position.x)*(posx-airplane.position.x))+((posz-airplane.position.z)*(posz-airplane.position.z)))) * (180/pi);   
+
+        angle = abs(angle);
+        if(airplane.position.x < posx)
+            angle *= -1;
+        missile.phi = angle;
+
+        angle = acos(((posy+90)-airplane.position.y) * (-1)/sqrt((posx-airplane.position.x)*(posx-airplane.position.x)+((posy+90)-airplane.position.y)*((posy+90)-airplane.position.y)+(posz-airplane.position.z)*(posz-airplane.position.z)))  * (180/pi);
+        missile.theta = angle;
+
+        airplane_missiles.push_back(missile);
+    }
+   
+}
+
 void tick_input(GLFWwindow *window) {
     int c  = glfwGetKey(window, GLFW_KEY_C);
     int a  = glfwGetKey(window, GLFW_KEY_A);
@@ -137,6 +243,7 @@ void tick_input(GLFWwindow *window) {
     int w  = glfwGetKey(window, GLFW_KEY_W);
     int s  = glfwGetKey(window, GLFW_KEY_S);
     int b  = glfwGetKey(window, GLFW_KEY_B);
+    int m  = glfwGetKey(window, GLFW_KEY_M);
     int left = glfwGetKey(window, GLFW_KEY_LEFT);
     int right = glfwGetKey(window, GLFW_KEY_RIGHT);
     int up = glfwGetKey(window, GLFW_KEY_UP);
@@ -190,6 +297,15 @@ void tick_input(GLFWwindow *window) {
     if(b == GLFW_RELEASE && keypress_b == true){
         keypress_b = false;
     }
+
+    if (m && !keypress_m){
+        keypress_m = true;
+        airplane_releasemissile();
+    }
+    if(m == GLFW_RELEASE && keypress_m == true){
+        keypress_m = false;
+    }
+    
     
 }
 
@@ -297,6 +413,10 @@ void tick_elements() {
     set_navigation();
     bomb_gravity();
     checkbomb_collision();
+    missile_release();
+    missile_move();
+    airplane_missilemove();
+    checkairplanemissile_collision();
     // navigation.tick();
     airplane.tick();
     for(int i=0;i<island.size();i++)
@@ -344,6 +464,9 @@ void initGL(GLFWwindow *window, int width, int height) {
     sph = Sphere(0,0,-100,10,COLOR_ENEMY);
     navigation = Navigation(0,0,-100,COLOR_ENEMY);
 
+    cout << cos(-52.39)<<endl;
+    cout << cos(52.39)<<endl;
+
     // Create and compile our GLSL program from the shaders
     programID = LoadShaders("Sample_GL.vert", "Sample_GL.frag");
     // Get a handle for our "MVP" uniform
@@ -384,10 +507,23 @@ int main(int argc, char **argv) {
             // 60 fps
             // OpenGL Draw commands
             draw();
+            tick_elements();
+
+            char str1[30];
+            sprintf(str1, "%lu", checkpoint.size()+1);
+            char final_str[120] = "Checkpoints Remaining : ";
+            strcat(final_str, str1);
+
+            // char str2[10];
+            // sprintf(str2, "%d", (player.score / 500));
+            // strcat(final_str, "      Lives : ");
+            // strcat(final_str, str2);
+
             // Swap Frame Buffer in double buffering
             glfwSwapBuffers(window);
 
-            tick_elements();
+            glfwSetWindowTitle(window, final_str);
+
             tick_input(window);
         }
 

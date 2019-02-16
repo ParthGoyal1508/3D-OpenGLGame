@@ -17,6 +17,8 @@ public:
     float rotation;
     float radius;
     float r_angle;
+    float theta;
+    float phi;
     // bounding_box_t bounding_box();
 
   private:
