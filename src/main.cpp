@@ -9,6 +9,9 @@
 #include "dashboard.h"
 #include "island.h"
 #include "navigation.h"
+#include "fuel.h"
+#include "volcano.h"
+#include "rings.h"
 
 using namespace std;
 
@@ -28,7 +31,10 @@ Navigation navigation;
 vector<Sphere> bomb;
 vector<Ellipse> missiles;
 vector<Ellipse> airplane_missiles;
+vector<Fuel> fuel;
+vector<Volcano> volcano;
 Sphere sph;
+vector<Rings> rings;
 vector<int> checkpoint = {7,14,21,1,8,15,22,2,9,16,23,3,10,17,24,4,11,18,25,5,12,19,26,6,13,20,27};
 
 
@@ -91,6 +97,12 @@ void draw() {
         missiles[i].draw(VP);
     for(int i=0;i<airplane_missiles.size();i++)
         airplane_missiles[i].draw(VP);
+    for(int i=0;i<fuel.size();i++)
+        fuel[i].draw(VP);
+    for(int i=0;i<volcano.size();i++)
+        volcano[i].draw(VP);
+    for(int i=0;i<rings.size();i++)
+        rings[i].draw(VP);
     //sph.draw(VP);
     // cout << airplane.position.y <<endl;
 }
@@ -161,6 +173,7 @@ void checkbomb_collision(){
             checkpoint.erase(checkpoint.begin()+0); 
             navigation.checkpoint = j;
             island[navigation.checkpoint].ischeckpoint = 1;
+            fuel.push_back(Fuel(island[navigation.checkpoint].position.x + 20, 20, island[navigation.checkpoint].position.z +25, COLOR_FIRE));
         }
     }
 }
@@ -185,6 +198,7 @@ void checkairplanemissile_collision(){
             checkpoint.erase(checkpoint.begin()+0); 
             navigation.checkpoint = j;
             island[navigation.checkpoint].ischeckpoint = 1;
+            fuel.push_back(Fuel(island[navigation.checkpoint].position.x + 20, 20, island[navigation.checkpoint].position.z +25, COLOR_FIRE));
         }
     }
 }
@@ -284,6 +298,8 @@ void tick_input(GLFWwindow *window) {
 
     if (up){
         airplane.move_forward();
+        // sea.position.x = sea.position.x - 2 * sin(airplane.rotation);
+        // sea.position.z = sea.position.z - 2 * cos(airplane.rotation);    
     }
     
     if (down){
@@ -307,6 +323,32 @@ void tick_input(GLFWwindow *window) {
     }
     
     
+}
+
+bool detect_collision(bounding_box_t a, bounding_box_t b) {
+    return (abs(a.x - b.x) < (a.length + b.length)/2) && (abs(a.z - b.z) < (a.width + b.width)/2) && (abs(a.y - b.y) < (a.height + b.height)/2);
+}
+
+void fuelplane_collision(){
+    for(int i=0;i<fuel.size();i++){
+        if(detect_collision(fuel[i].bounding_box(),airplane.bounding_box())){
+            cout << "hello";
+            fuel.erase(fuel.begin()+i);
+        }
+    }
+}
+
+bool detect_collision_volcano(bounding_box_t a, bounding_box_t b) {
+    return (abs(a.x - b.x) < (a.length + b.length)/2) && (abs(a.z - b.z) < (a.width + b.width)/2) ;
+}
+
+void detect_volcano_collision(){
+    for(int i=0;i<volcano.size();i++){
+        if(detect_collision_volcano(airplane.bounding_box(),volcano[i].bounding_box())){
+            cout << "GAME OVER, YOU ARE DEAD\n";
+            quit(window);
+        }
+    }
 }
 
 void set_navigation(){
@@ -417,8 +459,11 @@ void tick_elements() {
     missile_move();
     airplane_missilemove();
     checkairplanemissile_collision();
+    fuelplane_collision();
+    detect_volcano_collision();
     // navigation.tick();
     airplane.tick();
+    fuel[0].tick();
     for(int i=0;i<island.size();i++)
         island[i].tick(); 
     // camera_rotation_angle += 1;
@@ -463,6 +508,32 @@ void initGL(GLFWwindow *window, int width, int height) {
     // navigation.checkpoint = 0;
     sph = Sphere(0,0,-100,10,COLOR_ENEMY);
     navigation = Navigation(0,0,-100,COLOR_ENEMY);
+    fuel.push_back(Fuel(island[0].position.x+20,20,island[0].position.z+25,COLOR_FIRE));
+    for(int i=0;i<2;i++){
+        double x =fRand(-1500,1500);
+        double z =fRand(0,3000);
+        volcano.push_back(Volcano(x,sea.position.y,z, COLOR_FIRE));
+    }
+    for(int i=0;i<2;i++){
+       double x = fRand(1500,3000);
+        double z = fRand(-3000,0);
+        volcano.push_back(Volcano(x,sea.position.y,z, COLOR_FIRE));
+    }
+    for(int i=0;i<2;i++){
+        double x =fRand(-1500,0);
+        double z =fRand(-3000,0);
+        volcano.push_back(Volcano(x,sea.position.y,z, COLOR_FIRE));
+    }
+    for(int i=0;i<2;i++){
+        double x =fRand(-3000,0);
+        double z =fRand(0,3000);
+        volcano.push_back(Volcano(x,sea.position.y,z, COLOR_FIRE));
+    }
+    for(int i=0;i<10;i++){
+        double x =fRand(-3000,3000);
+        double z =fRand(-3000,3000);
+        rings.push_back(Rings(x,50,z,10,8,COLOR_GREEN));
+    }
 
     cout << cos(-52.39)<<endl;
     cout << cos(52.39)<<endl;
@@ -534,10 +605,6 @@ int main(int argc, char **argv) {
     quit(window);
 }
 
-bool detect_collision(bounding_box_t a, bounding_box_t b) {
-    return (abs(a.x - b.x) * 2 < (a.width + b.width)) &&
-           (abs(a.y - b.y) * 2 < (a.height + b.height));
-}
 
 void reset_screen() {
     float top    = screen_center_y + 4 / screen_zoom;

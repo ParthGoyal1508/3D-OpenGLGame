@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game
+CMAKE_SOURCE_DIR = /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build
+CMAKE_BINARY_DIR = /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -285,6 +285,33 @@ src/ellipse.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/ellipse.cpp.s
 .PHONY : src/ellipse.cpp.s
 
+src/fuel.o: src/fuel.cpp.o
+
+.PHONY : src/fuel.o
+
+# target to build an object file
+src/fuel.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o
+.PHONY : src/fuel.cpp.o
+
+src/fuel.i: src/fuel.cpp.i
+
+.PHONY : src/fuel.i
+
+# target to preprocess a source file
+src/fuel.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.i
+.PHONY : src/fuel.cpp.i
+
+src/fuel.s: src/fuel.cpp.s
+
+.PHONY : src/fuel.s
+
+# target to generate assembly for a file
+src/fuel.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.s
+.PHONY : src/fuel.cpp.s
+
 src/input.o: src/input.cpp.o
 
 .PHONY : src/input.o
@@ -447,6 +474,33 @@ src/other_handlers.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
 
+src/rings.o: src/rings.cpp.o
+
+.PHONY : src/rings.o
+
+# target to build an object file
+src/rings.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o
+.PHONY : src/rings.cpp.o
+
+src/rings.i: src/rings.cpp.i
+
+.PHONY : src/rings.i
+
+# target to preprocess a source file
+src/rings.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/rings.cpp.i
+.PHONY : src/rings.cpp.i
+
+src/rings.s: src/rings.cpp.s
+
+.PHONY : src/rings.s
+
+# target to generate assembly for a file
+src/rings.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/rings.cpp.s
+.PHONY : src/rings.cpp.s
+
 src/sphere.o: src/sphere.cpp.o
 
 .PHONY : src/sphere.o
@@ -500,6 +554,33 @@ src/timer.s: src/timer.cpp.s
 src/timer.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/timer.cpp.s
 .PHONY : src/timer.cpp.s
+
+src/volcano.o: src/volcano.cpp.o
+
+.PHONY : src/volcano.o
+
+# target to build an object file
+src/volcano.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o
+.PHONY : src/volcano.cpp.o
+
+src/volcano.i: src/volcano.cpp.i
+
+.PHONY : src/volcano.i
+
+# target to preprocess a source file
+src/volcano.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.i
+.PHONY : src/volcano.cpp.i
+
+src/volcano.s: src/volcano.cpp.s
+
+.PHONY : src/volcano.s
+
+# target to generate assembly for a file
+src/volcano.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.s
+.PHONY : src/volcano.cpp.s
 
 src/water.o: src/water.cpp.o
 
@@ -555,6 +636,9 @@ help:
 	@echo "... src/ellipse.o"
 	@echo "... src/ellipse.i"
 	@echo "... src/ellipse.s"
+	@echo "... src/fuel.o"
+	@echo "... src/fuel.i"
+	@echo "... src/fuel.s"
 	@echo "... src/input.o"
 	@echo "... src/input.i"
 	@echo "... src/input.s"
@@ -573,12 +657,18 @@ help:
 	@echo "... src/other_handlers.o"
 	@echo "... src/other_handlers.i"
 	@echo "... src/other_handlers.s"
+	@echo "... src/rings.o"
+	@echo "... src/rings.i"
+	@echo "... src/rings.s"
 	@echo "... src/sphere.o"
 	@echo "... src/sphere.i"
 	@echo "... src/sphere.s"
 	@echo "... src/timer.o"
 	@echo "... src/timer.i"
 	@echo "... src/timer.s"
+	@echo "... src/volcano.o"
+	@echo "... src/volcano.i"
+	@echo "... src/volcano.s"
 	@echo "... src/water.o"
 	@echo "... src/water.i"
 	@echo "... src/water.s"

@@ -26,6 +26,10 @@ CMakeFiles/graphics_asgn1.dir/src/ellipse.cpp.o: ../src/ellipse.cpp
 CMakeFiles/graphics_asgn1.dir/src/ellipse.cpp.o: ../src/ellipse.h
 CMakeFiles/graphics_asgn1.dir/src/ellipse.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o: ../src/fuel.cpp
+CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o: ../src/fuel.h
+CMakeFiles/graphics_asgn1.dir/src/fuel.cpp.o: ../src/main.h
+
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/input.cpp
 CMakeFiles/graphics_asgn1.dir/src/input.cpp.o: ../src/main.h
 
@@ -38,12 +42,15 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/dashboard.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ellipse.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/fuel.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/island.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/navigation.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/rings.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/sphere.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/volcano.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/water.h
 
 CMakeFiles/graphics_asgn1.dir/src/navigation.cpp.o: ../src/main.h
@@ -56,12 +63,20 @@ CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
 
+CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o: ../src/rings.cpp
+CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o: ../src/rings.h
+
 CMakeFiles/graphics_asgn1.dir/src/sphere.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/sphere.cpp.o: ../src/sphere.cpp
 CMakeFiles/graphics_asgn1.dir/src/sphere.cpp.o: ../src/sphere.h
 
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.cpp
 CMakeFiles/graphics_asgn1.dir/src/timer.cpp.o: ../src/timer.h
+
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/volcano.cpp
+CMakeFiles/graphics_asgn1.dir/src/volcano.cpp.o: ../src/volcano.h
 
 CMakeFiles/graphics_asgn1.dir/src/water.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/water.cpp.o: ../src/water.cpp

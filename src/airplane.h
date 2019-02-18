@@ -26,6 +26,8 @@ class Airplane
     void move_backward();
     void move_upward();
     void move_downward();
+    bounding_box_t bounding_box();
+
   private:
     VAO *object;
     VAO *object2;

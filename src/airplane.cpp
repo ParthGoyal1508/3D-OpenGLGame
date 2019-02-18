@@ -358,11 +358,12 @@ void Airplane::move_backward(){
 }
 
 void Airplane::move_upward(){
-    this->position.y += this-> speed;
+    // this->position.y += this-> speed;
+    this->position.y += 1;
 }
 
 void Airplane::move_downward(){
-    this->position.y -= this-> speed;
+    this->position.y -= 1;
 }
 
 void Airplane::tick() {
@@ -370,5 +371,10 @@ void Airplane::tick() {
         this->rotation2 -= 0.25;
     else if(this->rotation2 < 0)
         this->rotation2 += 0.25;
+}
+
+bounding_box_t Airplane::bounding_box() {
+    bounding_box_t bbox = {this->position.x, this->position.y, this->position.z-float(2.5), 12, 2, 9};
+    return bbox;
 }
 

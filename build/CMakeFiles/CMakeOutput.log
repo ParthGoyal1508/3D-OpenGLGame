@@ -10,7 +10,7 @@ The output was:
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
 
-The C compiler identification is GNU, found in "/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
+The C compiler identification is GNU, found in "/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/3.10.2/CompilerIdC/a.out"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: /usr/bin/c++ 
@@ -23,33 +23,33 @@ The output was:
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
 
-The CXX compiler identification is GNU, found in "/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
+The CXX compiler identification is GNU, found in "/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out"
 
 Determining if the C compiler works passed with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_28ffc/fast"
-/usr/bin/make -f CMakeFiles/cmTC_28ffc.dir/build.make CMakeFiles/cmTC_28ffc.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_28ffc.dir/testCCompiler.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_28ffc.dir/testCCompiler.c.o   -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp/testCCompiler.c
-Linking C executable cmTC_28ffc
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_28ffc.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_28ffc.dir/testCCompiler.c.o  -o cmTC_28ffc 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_e5677/fast"
+/usr/bin/make -f CMakeFiles/cmTC_e5677.dir/build.make CMakeFiles/cmTC_e5677.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e5677.dir/testCCompiler.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_e5677.dir/testCCompiler.c.o   -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp/testCCompiler.c
+Linking C executable cmTC_e5677
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5677.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e5677.dir/testCCompiler.c.o  -o cmTC_e5677 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_90cab/fast"
-/usr/bin/make -f CMakeFiles/cmTC_90cab.dir/build.make CMakeFiles/cmTC_90cab.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o
-/usr/bin/cc    -o CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
-Linking C executable cmTC_90cab
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90cab.dir/link.txt --verbose=1
-/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o  -o cmTC_90cab 
+Run Build Command:"/usr/bin/make" "cmTC_48a4c/fast"
+/usr/bin/make -f CMakeFiles/cmTC_48a4c.dir/build.make CMakeFiles/cmTC_48a4c.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o
+/usr/bin/cc    -o CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c
+Linking C executable cmTC_48a4c
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48a4c.dir/link.txt --verbose=1
+/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o  -o cmTC_48a4c 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/cc
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -61,24 +61,24 @@ Thread model: posix
 gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_90cab' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfvOE36.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_90cab /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_90cab' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_48a4c' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccB8Dgdt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_48a4c /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_48a4c' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
 Parsed C implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_90cab/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_90cab.dir/build.make CMakeFiles/cmTC_90cab.dir/build]
-  ignore line: [make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building C object CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o]
-  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
-  ignore line: [Linking C executable cmTC_90cab]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_90cab.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o  -o cmTC_90cab ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_48a4c/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_48a4c.dir/build.make CMakeFiles/cmTC_48a4c.dir/build]
+  ignore line: [make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building C object CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o]
+  ignore line: [/usr/bin/cc    -o CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o   -c /usr/share/cmake-3.10/Modules/CMakeCCompilerABI.c]
+  ignore line: [Linking C executable cmTC_48a4c]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_48a4c.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/cc     -v -rdynamic CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o  -o cmTC_48a4c ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/cc]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -90,13 +90,13 @@ Parsed C implicit link information from above output:
   ignore line: [gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_90cab' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccfvOE36.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_90cab /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_48a4c' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccB8Dgdt.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_48a4c /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccfvOE36.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/ccB8Dgdt.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -116,7 +116,7 @@ Parsed C implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_90cab] ==> ignore
+    arg [cmTC_48a4c] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -128,7 +128,7 @@ Parsed C implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_90cab.dir/CMakeCCompilerABI.c.o] ==> ignore
+    arg [CMakeFiles/cmTC_48a4c.dir/CMakeCCompilerABI.c.o] ==> ignore
     arg [-lgcc] ==> lib [gcc]
     arg [--push-state] ==> ignore
     arg [--as-needed] ==> ignore
@@ -158,17 +158,17 @@ Parsed C implicit link information from above output:
 
 
 Detecting C [-std=c11] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_661fd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_661fd.dir/build.make CMakeFiles/cmTC_661fd.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_661fd.dir/feature_tests.c.o
-/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_661fd.dir/feature_tests.c.o   -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_661fd
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_661fd.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_661fd.dir/feature_tests.c.o  -o cmTC_661fd 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a4aab/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a4aab.dir/build.make CMakeFiles/cmTC_a4aab.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a4aab.dir/feature_tests.c.o
+/usr/bin/cc   -std=c11 -o CMakeFiles/cmTC_a4aab.dir/feature_tests.c.o   -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a4aab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a4aab.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a4aab.dir/feature_tests.c.o  -o cmTC_a4aab 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -178,17 +178,17 @@ make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D
 
 
 Detecting C [-std=c99] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_e4f8e/fast"
-/usr/bin/make -f CMakeFiles/cmTC_e4f8e.dir/build.make CMakeFiles/cmTC_e4f8e.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_e4f8e.dir/feature_tests.c.o
-/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_e4f8e.dir/feature_tests.c.o   -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_e4f8e
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e4f8e.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_e4f8e.dir/feature_tests.c.o  -o cmTC_e4f8e 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_3b989/fast"
+/usr/bin/make -f CMakeFiles/cmTC_3b989.dir/build.make CMakeFiles/cmTC_3b989.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_3b989.dir/feature_tests.c.o
+/usr/bin/cc   -std=c99 -o CMakeFiles/cmTC_3b989.dir/feature_tests.c.o   -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_3b989
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3b989.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_3b989.dir/feature_tests.c.o  -o cmTC_3b989 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -198,17 +198,17 @@ make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D
 
 
 Detecting C [-std=c90] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_df723/fast"
-/usr/bin/make -f CMakeFiles/cmTC_df723.dir/build.make CMakeFiles/cmTC_df723.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_df723.dir/feature_tests.c.o
-/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_df723.dir/feature_tests.c.o   -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.c
-Linking C executable cmTC_df723
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_df723.dir/link.txt --verbose=1
-/usr/bin/cc      -rdynamic CMakeFiles/cmTC_df723.dir/feature_tests.c.o  -o cmTC_df723 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_a356f/fast"
+/usr/bin/make -f CMakeFiles/cmTC_a356f.dir/build.make CMakeFiles/cmTC_a356f.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a356f.dir/feature_tests.c.o
+/usr/bin/cc   -std=c90 -o CMakeFiles/cmTC_a356f.dir/feature_tests.c.o   -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.c
+Linking C executable cmTC_a356f
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a356f.dir/link.txt --verbose=1
+/usr/bin/cc      -rdynamic CMakeFiles/cmTC_a356f.dir/feature_tests.c.o  -o cmTC_a356f 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: C_FEATURE:1c_function_prototypes
@@ -216,30 +216,30 @@ make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D
     Feature record: C_FEATURE:0c_static_assert
     Feature record: C_FEATURE:0c_variadic_macros
 Determining if the CXX compiler works passed with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_68bcf/fast"
-/usr/bin/make -f CMakeFiles/cmTC_68bcf.dir/build.make CMakeFiles/cmTC_68bcf.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_68bcf.dir/testCXXCompiler.cxx.o
-/usr/bin/c++     -o CMakeFiles/cmTC_68bcf.dir/testCXXCompiler.cxx.o -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
-Linking CXX executable cmTC_68bcf
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_68bcf.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_68bcf.dir/testCXXCompiler.cxx.o  -o cmTC_68bcf 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_ba158/fast"
+/usr/bin/make -f CMakeFiles/cmTC_ba158.dir/build.make CMakeFiles/cmTC_ba158.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_ba158.dir/testCXXCompiler.cxx.o
+/usr/bin/c++     -o CMakeFiles/cmTC_ba158.dir/testCXXCompiler.cxx.o -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp/testCXXCompiler.cxx
+Linking CXX executable cmTC_ba158
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ba158.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ba158.dir/testCXXCompiler.cxx.o  -o cmTC_ba158 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_22f27/fast"
-/usr/bin/make -f CMakeFiles/cmTC_22f27.dir/build.make CMakeFiles/cmTC_22f27.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o
-/usr/bin/c++     -o CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
-Linking CXX executable cmTC_22f27
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22f27.dir/link.txt --verbose=1
-/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_22f27 
+Run Build Command:"/usr/bin/make" "cmTC_cabb0/fast"
+/usr/bin/make -f CMakeFiles/cmTC_cabb0.dir/build.make CMakeFiles/cmTC_cabb0.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o
+/usr/bin/c++     -o CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp
+Linking CXX executable cmTC_cabb0
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cabb0.dir/link.txt --verbose=1
+/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_cabb0 
 Using built-in specs.
 COLLECT_GCC=/usr/bin/c++
 COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper
@@ -251,24 +251,24 @@ Thread model: posix
 gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) 
 COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/
 LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_22f27' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
- /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMXRm89.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_22f27 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
-COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_22f27' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_cabb0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7Ewkep.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_cabb0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o
+COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_cabb0' '-shared-libgcc' '-mtune=generic' '-march=x86-64'
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
 Parsed CXX implicit link information from above output:
   link line regex: [^( *|.*[/\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\]+-)?ld|collect2)[^/\]*( |$)]
-  ignore line: [Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp]
+  ignore line: [Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp]
   ignore line: []
-  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_22f27/fast"]
-  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_22f27.dir/build.make CMakeFiles/cmTC_22f27.dir/build]
-  ignore line: [make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp']
-  ignore line: [Building CXX object CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o]
-  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
-  ignore line: [Linking CXX executable cmTC_22f27]
-  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_22f27.dir/link.txt --verbose=1]
-  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_22f27 ]
+  ignore line: [Run Build Command:"/usr/bin/make" "cmTC_cabb0/fast"]
+  ignore line: [/usr/bin/make -f CMakeFiles/cmTC_cabb0.dir/build.make CMakeFiles/cmTC_cabb0.dir/build]
+  ignore line: [make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp']
+  ignore line: [Building CXX object CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o]
+  ignore line: [/usr/bin/c++     -o CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake-3.10/Modules/CMakeCXXCompilerABI.cpp]
+  ignore line: [Linking CXX executable cmTC_cabb0]
+  ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cabb0.dir/link.txt --verbose=1]
+  ignore line: [/usr/bin/c++      -v -rdynamic CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o  -o cmTC_cabb0 ]
   ignore line: [Using built-in specs.]
   ignore line: [COLLECT_GCC=/usr/bin/c++]
   ignore line: [COLLECT_LTO_WRAPPER=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper]
@@ -280,13 +280,13 @@ Parsed CXX implicit link information from above output:
   ignore line: [gcc version 7.3.0 (Ubuntu 7.3.0-27ubuntu1~18.04) ]
   ignore line: [COMPILER_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/]
   ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-linux-gnu/7/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib/:/lib/x86_64-linux-gnu/:/lib/../lib/:/usr/lib/x86_64-linux-gnu/:/usr/lib/../lib/:/usr/lib/gcc/x86_64-linux-gnu/7/../../../:/lib/:/usr/lib/]
-  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_22f27' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
-  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMXRm89.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_22f27 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
+  ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_cabb0' '-shared-libgcc' '-mtune=generic' '-march=x86-64']
+  link line: [ /usr/lib/gcc/x86_64-linux-gnu/7/collect2 -plugin /usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so -plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper -plugin-opt=-fresolution=/tmp/cc7Ewkep.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --sysroot=/ --build-id --eh-frame-hdr -m elf_x86_64 --hash-style=gnu --as-needed -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -pie -z now -z relro -o cmTC_cabb0 /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o -L/usr/lib/gcc/x86_64-linux-gnu/7 -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/7/../../.. CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-linux-gnu/7/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crtn.o]
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/collect2] ==> ignore
     arg [-plugin] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/liblto_plugin.so] ==> ignore
     arg [-plugin-opt=/usr/lib/gcc/x86_64-linux-gnu/7/lto-wrapper] ==> ignore
-    arg [-plugin-opt=-fresolution=/tmp/ccMXRm89.res] ==> ignore
+    arg [-plugin-opt=-fresolution=/tmp/cc7Ewkep.res] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
     arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
     arg [-plugin-opt=-pass-through=-lc] ==> ignore
@@ -306,7 +306,7 @@ Parsed CXX implicit link information from above output:
     arg [-znow] ==> ignore
     arg [-zrelro] ==> ignore
     arg [-o] ==> ignore
-    arg [cmTC_22f27] ==> ignore
+    arg [cmTC_cabb0] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/Scrt1.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/../../../x86_64-linux-gnu/crti.o] ==> ignore
     arg [/usr/lib/gcc/x86_64-linux-gnu/7/crtbeginS.o] ==> ignore
@@ -318,7 +318,7 @@ Parsed CXX implicit link information from above output:
     arg [-L/usr/lib/x86_64-linux-gnu] ==> dir [/usr/lib/x86_64-linux-gnu]
     arg [-L/usr/lib/../lib] ==> dir [/usr/lib/../lib]
     arg [-L/usr/lib/gcc/x86_64-linux-gnu/7/../../..] ==> dir [/usr/lib/gcc/x86_64-linux-gnu/7/../../..]
-    arg [CMakeFiles/cmTC_22f27.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+    arg [CMakeFiles/cmTC_cabb0.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
     arg [-lstdc++] ==> lib [stdc++]
     arg [-lm] ==> lib [m]
     arg [-lgcc_s] ==> lib [gcc_s]
@@ -344,17 +344,17 @@ Parsed CXX implicit link information from above output:
 
 
 Detecting CXX [-std=c++1z] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_85fee/fast"
-/usr/bin/make -f CMakeFiles/cmTC_85fee.dir/build.make CMakeFiles/cmTC_85fee.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_85fee.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_85fee.dir/feature_tests.cxx.o -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_85fee
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85fee.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_85fee.dir/feature_tests.cxx.o  -o cmTC_85fee 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_c4213/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c4213.dir/build.make CMakeFiles/cmTC_c4213.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_c4213.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++1z -o CMakeFiles/cmTC_c4213.dir/feature_tests.cxx.o -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_c4213
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c4213.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_c4213.dir/feature_tests.cxx.o  -o cmTC_c4213 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -417,17 +417,17 @@ make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D
 
 
 Detecting CXX [-std=c++14] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_57708/fast"
-/usr/bin/make -f CMakeFiles/cmTC_57708.dir/build.make CMakeFiles/cmTC_57708.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_57708.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_57708.dir/feature_tests.cxx.o -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_57708
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_57708.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_57708.dir/feature_tests.cxx.o  -o cmTC_57708 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_6c0b2/fast"
+/usr/bin/make -f CMakeFiles/cmTC_6c0b2.dir/build.make CMakeFiles/cmTC_6c0b2.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_6c0b2.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++14 -o CMakeFiles/cmTC_6c0b2.dir/feature_tests.cxx.o -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_6c0b2
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6c0b2.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_6c0b2.dir/feature_tests.cxx.o  -o cmTC_6c0b2 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:1cxx_aggregate_default_initializers
@@ -490,17 +490,17 @@ make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D
 
 
 Detecting CXX [-std=c++11] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_ad9b5/fast"
-/usr/bin/make -f CMakeFiles/cmTC_ad9b5.dir/build.make CMakeFiles/cmTC_ad9b5.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_ad9b5.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_ad9b5.dir/feature_tests.cxx.o -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_ad9b5
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ad9b5.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_ad9b5.dir/feature_tests.cxx.o  -o cmTC_ad9b5 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_14f48/fast"
+/usr/bin/make -f CMakeFiles/cmTC_14f48.dir/build.make CMakeFiles/cmTC_14f48.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_14f48.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++11 -o CMakeFiles/cmTC_14f48.dir/feature_tests.cxx.o -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_14f48
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_14f48.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_14f48.dir/feature_tests.cxx.o  -o cmTC_14f48 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
@@ -563,17 +563,17 @@ make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D
 
 
 Detecting CXX [-std=c++98] compiler features compiled with the following output:
-Change Dir: /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
+Change Dir: /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_34433/fast"
-/usr/bin/make -f CMakeFiles/cmTC_34433.dir/build.make CMakeFiles/cmTC_34433.dir/build
-make[1]: Entering directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
-Building CXX object CMakeFiles/cmTC_34433.dir/feature_tests.cxx.o
-/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_34433.dir/feature_tests.cxx.o -c /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
-Linking CXX executable cmTC_34433
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_34433.dir/link.txt --verbose=1
-/usr/bin/c++       -rdynamic CMakeFiles/cmTC_34433.dir/feature_tests.cxx.o  -o cmTC_34433 
-make[1]: Leaving directory '/media/parth/New Volume/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Run Build Command:"/usr/bin/make" "cmTC_d7b9e/fast"
+/usr/bin/make -f CMakeFiles/cmTC_d7b9e.dir/build.make CMakeFiles/cmTC_d7b9e.dir/build
+make[1]: Entering directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
+Building CXX object CMakeFiles/cmTC_d7b9e.dir/feature_tests.cxx.o
+/usr/bin/c++    -std=c++98 -o CMakeFiles/cmTC_d7b9e.dir/feature_tests.cxx.o -c /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/feature_tests.cxx
+Linking CXX executable cmTC_d7b9e
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d7b9e.dir/link.txt --verbose=1
+/usr/bin/c++       -rdynamic CMakeFiles/cmTC_d7b9e.dir/feature_tests.cxx.o  -o cmTC_d7b9e 
+make[1]: Leaving directory '/media/parth/New Volume1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/CMakeTmp'
 
 
     Feature record: CXX_FEATURE:0cxx_aggregate_default_initializers
