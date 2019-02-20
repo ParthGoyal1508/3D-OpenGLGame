@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game
+CMAKE_SOURCE_DIR = /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build
+CMAKE_BINARY_DIR = /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -150,6 +150,33 @@ src/airplane.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.s
 .PHONY : src/airplane.cpp.s
 
+src/audio.o: src/audio.cpp.o
+
+.PHONY : src/audio.o
+
+# target to build an object file
+src/audio.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/audio.cpp.o
+.PHONY : src/audio.cpp.o
+
+src/audio.i: src/audio.cpp.i
+
+.PHONY : src/audio.i
+
+# target to preprocess a source file
+src/audio.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/audio.cpp.i
+.PHONY : src/audio.cpp.i
+
+src/audio.s: src/audio.cpp.s
+
+.PHONY : src/audio.s
+
+# target to generate assembly for a file
+src/audio.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/audio.cpp.s
+.PHONY : src/audio.cpp.s
+
 src/ball.o: src/ball.cpp.o
 
 .PHONY : src/ball.o
@@ -203,6 +230,33 @@ src/color.s: src/color.cpp.s
 src/color.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/color.cpp.s
 .PHONY : src/color.cpp.s
+
+src/compass.o: src/compass.cpp.o
+
+.PHONY : src/compass.o
+
+# target to build an object file
+src/compass.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o
+.PHONY : src/compass.cpp.o
+
+src/compass.i: src/compass.cpp.i
+
+.PHONY : src/compass.i
+
+# target to preprocess a source file
+src/compass.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/compass.cpp.i
+.PHONY : src/compass.cpp.i
+
+src/compass.s: src/compass.cpp.s
+
+.PHONY : src/compass.s
+
+# target to generate assembly for a file
+src/compass.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/compass.cpp.s
+.PHONY : src/compass.cpp.s
 
 src/cylinder.o: src/cylinder.cpp.o
 
@@ -474,6 +528,33 @@ src/other_handlers.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.s
 .PHONY : src/other_handlers.cpp.s
 
+src/parachute.o: src/parachute.cpp.o
+
+.PHONY : src/parachute.o
+
+# target to build an object file
+src/parachute.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o
+.PHONY : src/parachute.cpp.o
+
+src/parachute.i: src/parachute.cpp.i
+
+.PHONY : src/parachute.i
+
+# target to preprocess a source file
+src/parachute.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.i
+.PHONY : src/parachute.cpp.i
+
+src/parachute.s: src/parachute.cpp.s
+
+.PHONY : src/parachute.s
+
+# target to generate assembly for a file
+src/parachute.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.s
+.PHONY : src/parachute.cpp.s
+
 src/rings.o: src/rings.cpp.o
 
 .PHONY : src/rings.o
@@ -500,6 +581,33 @@ src/rings.s: src/rings.cpp.s
 src/rings.cpp.s:
 	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/rings.cpp.s
 .PHONY : src/rings.cpp.s
+
+src/score.o: src/score.cpp.o
+
+.PHONY : src/score.o
+
+# target to build an object file
+src/score.cpp.o:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/score.cpp.o
+.PHONY : src/score.cpp.o
+
+src/score.i: src/score.cpp.i
+
+.PHONY : src/score.i
+
+# target to preprocess a source file
+src/score.cpp.i:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/score.cpp.i
+.PHONY : src/score.cpp.i
+
+src/score.s: src/score.cpp.s
+
+.PHONY : src/score.s
+
+# target to generate assembly for a file
+src/score.cpp.s:
+	$(MAKE) -f CMakeFiles/graphics_asgn1.dir/build.make CMakeFiles/graphics_asgn1.dir/src/score.cpp.s
+.PHONY : src/score.cpp.s
 
 src/sphere.o: src/sphere.cpp.o
 
@@ -621,12 +729,18 @@ help:
 	@echo "... src/airplane.o"
 	@echo "... src/airplane.i"
 	@echo "... src/airplane.s"
+	@echo "... src/audio.o"
+	@echo "... src/audio.i"
+	@echo "... src/audio.s"
 	@echo "... src/ball.o"
 	@echo "... src/ball.i"
 	@echo "... src/ball.s"
 	@echo "... src/color.o"
 	@echo "... src/color.i"
 	@echo "... src/color.s"
+	@echo "... src/compass.o"
+	@echo "... src/compass.i"
+	@echo "... src/compass.s"
 	@echo "... src/cylinder.o"
 	@echo "... src/cylinder.i"
 	@echo "... src/cylinder.s"
@@ -657,9 +771,15 @@ help:
 	@echo "... src/other_handlers.o"
 	@echo "... src/other_handlers.i"
 	@echo "... src/other_handlers.s"
+	@echo "... src/parachute.o"
+	@echo "... src/parachute.i"
+	@echo "... src/parachute.s"
 	@echo "... src/rings.o"
 	@echo "... src/rings.i"
 	@echo "... src/rings.s"
+	@echo "... src/score.o"
+	@echo "... src/score.i"
+	@echo "... src/score.s"
 	@echo "... src/sphere.o"
 	@echo "... src/sphere.i"
 	@echo "... src/sphere.s"

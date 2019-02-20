@@ -13,6 +13,10 @@ int cur4 =0;
 void Island::make_ellipse(float x ,float y ,float z ,float radius1, float radius2, float radius3){
     const int n = 40;
 
+    this->radius1 = radius1;
+    this->radius2 = radius2;
+    this->radius3 = radius3;
+
     //phi = angle1, theta = angle2
     double angle1 = 0;
     double angle2 = 0;
@@ -274,5 +278,10 @@ void Island::set_position(float x, float y, float z) {
 
 void Island::tick(){
     this->rotation += 1;
+}
+
+bounding_box_t Island::bounding_box() {
+    bounding_box_t bbox = {this->position.x, this->position.y+this->radius2+10, this->position.z, 5, 5, 5};
+    return bbox;
 }
 

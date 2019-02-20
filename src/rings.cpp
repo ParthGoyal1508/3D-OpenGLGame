@@ -84,8 +84,39 @@ Rings::Rings(float x, float y, float z, float radius1, float radius2, color_t co
 
     }
 
+    for(int i=0; i<n; i++){
+        vertex_buffer_data[cur++] = radius1 * cos(angle);
+        vertex_buffer_data[cur++] = radius1 * sin(angle);
+        vertex_buffer_data[cur++] = 0.0f;
 
-    this->object = create3DObject(GL_TRIANGLES, n*12, vertex_buffer_data, color, GL_FILL);
+        vertex_buffer_data[cur++] = radius1 * cos(angle);
+        vertex_buffer_data[cur++] = radius1 * sin(angle);
+        vertex_buffer_data[cur++] = 1.0f;
+
+        angle += diff;
+        vertex_buffer_data[cur++] = radius1 * cos(angle);
+        vertex_buffer_data[cur++] = radius1 * sin(angle);
+        vertex_buffer_data[cur++] = 1.0f;
+
+        angle-=diff;
+        vertex_buffer_data[cur++] = radius1 * cos(angle);
+        vertex_buffer_data[cur++] = radius1 * sin(angle);
+        vertex_buffer_data[cur++] = 0.0f;
+
+        angle+=diff;
+        vertex_buffer_data[cur++] = radius1 * cos(angle);
+        vertex_buffer_data[cur++] = radius1 * sin(angle);
+        vertex_buffer_data[cur++] = 0.0f;
+
+        vertex_buffer_data[cur++] = radius1 * cos(angle);
+        vertex_buffer_data[cur++] = radius1 * sin(angle);
+        vertex_buffer_data[cur++] = 1.0f;
+
+    }
+
+
+    this->object = create3DObject(GL_TRIANGLES, n*18, vertex_buffer_data, color, GL_FILL);
+    this->object1 = create3DObject(GL_TRIANGLES, n*18, vertex_buffer_data, COLOR_RED, GL_FILL);
 }
 
 void Rings::draw(glm::mat4 VP) {
@@ -97,7 +128,10 @@ void Rings::draw(glm::mat4 VP) {
     Matrices.model *= (translate * rotate);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
-    draw3DObject(this->object);
+    if(this->active == 1)
+        draw3DObject(this->object);
+    else
+        draw3DObject(this->object1);
 }
 
 void Rings::set_position(float x, float y, float z) {
@@ -107,4 +141,10 @@ void Rings::set_position(float x, float y, float z) {
 void Rings::tick() {
     this->rotation += 1;
 }
+
+bounding_box_t Rings::bounding_box() {
+    bounding_box_t bbox = {this->position.x, this->position.y, this->position.z, 20,20, 1};
+    return bbox;
+}
+
 

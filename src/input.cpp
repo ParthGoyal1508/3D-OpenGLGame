@@ -20,6 +20,8 @@ double drag_oldx = -1, drag_oldy = -1;
 
 using namespace std;
 
+
+
 /* Executed when a regular key is pressed/released/held-down */
 /* Prefered for Keyboard events */
 void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
@@ -53,12 +55,12 @@ void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods) {
 /* Executed for character input (like in text boxes) */
 void keyboardChar(GLFWwindow *window, unsigned int key) {
     switch (key) {
-    case 'Q':
-    case 'q':
-        quit(window);
-        break;
-    default:
-        break;
+    // case 'Q':
+    // case 'q':
+    //     quit(window);
+    //     break;
+    // default:
+    //     break;
     }
 }
 
@@ -83,6 +85,18 @@ void mouseButton(GLFWwindow *window, int button, int action, int mods) {
     }
 }
 
+// void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
+//     // Do something
+// }
+
+void cursor_position_callback(GLFWwindow* window, double xpos, double ypos)
+{
+    heli_camera(xpos, ypos);
+}
+
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset) {
-    // Do something
+    if(yoffset<0)
+        zoom_camera(1);
+    if(yoffset>0)
+        zoom_camera(-1);
 }

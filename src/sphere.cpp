@@ -71,8 +71,8 @@ void Sphere::tick() {
     this->position.z = this->start.z + distraction;
 }
 
-// bounding_box_t Sphere::bounding_box()
-// {
-//     bounding_box_t bbox = {this->position.x, this->position.y, this->position.z, 16, 16};
-//     return bbox;
-// }
+bounding_box_t Sphere::bounding_box()
+{
+    bounding_box_t bbox = {this->position.x, this->position.y, this->position.z, this->radius * 2, this->radius * 2, this->radius * 2};
+    return bbox;
+}

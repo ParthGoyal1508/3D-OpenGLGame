@@ -14,10 +14,12 @@ public:
     void draw(glm::mat4 VP);
     void tick();
     void set_position(float x, float y, float z);
+    int active=1;
     bounding_box_t bounding_box();
 
   private:
     VAO *object;
+    VAO *object1;
 };
 
 #endif // RINGS_H

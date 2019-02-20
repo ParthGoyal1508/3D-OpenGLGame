@@ -15,11 +15,13 @@ public:
     void set_position(float x, float y, float z);
     float size;
     float rotation;
-    float radius;
+    float radius1;
+    float radius2;
+    float radius3;
     float r_angle;
     float theta;
     float phi;
-    // bounding_box_t bounding_box();
+    bounding_box_t bounding_box();
 
   private:
     VAO *object;

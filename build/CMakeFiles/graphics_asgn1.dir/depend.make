@@ -7,12 +7,18 @@ CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/ellipse.h
 CMakeFiles/graphics_asgn1.dir/src/airplane.cpp.o: ../src/main.h
 
+CMakeFiles/graphics_asgn1.dir/src/audio.cpp.o: ../src/audio.cpp
+
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.cpp
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/ball.h
 CMakeFiles/graphics_asgn1.dir/src/ball.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/color.cpp
 CMakeFiles/graphics_asgn1.dir/src/color.cpp.o: ../src/main.h
+
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/compass.cpp
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/compass.h
+CMakeFiles/graphics_asgn1.dir/src/compass.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o: ../src/cylinder.cpp
 CMakeFiles/graphics_asgn1.dir/src/cylinder.cpp.o: ../src/cylinder.h
@@ -39,6 +45,7 @@ CMakeFiles/graphics_asgn1.dir/src/island.cpp.o: ../src/main.h
 
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/airplane.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ball.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/compass.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/cylinder.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/dashboard.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/ellipse.h
@@ -47,6 +54,7 @@ CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/island.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/navigation.h
+CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/parachute.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/rings.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/sphere.h
 CMakeFiles/graphics_asgn1.dir/src/main.cpp.o: ../src/timer.h
@@ -63,9 +71,17 @@ CMakeFiles/graphics_asgn1.dir/src/nonedit.cpp.o: ../src/nonedit.cpp
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/other_handlers.cpp.o: ../src/other_handlers.cpp
 
+CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o: ../src/parachute.cpp
+CMakeFiles/graphics_asgn1.dir/src/parachute.cpp.o: ../src/parachute.h
+
 CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o: ../src/rings.cpp
 CMakeFiles/graphics_asgn1.dir/src/rings.cpp.o: ../src/rings.h
+
+CMakeFiles/graphics_asgn1.dir/src/score.cpp.o: ../src/main.h
+CMakeFiles/graphics_asgn1.dir/src/score.cpp.o: ../src/score.cpp
+CMakeFiles/graphics_asgn1.dir/src/score.cpp.o: ../src/score.h
 
 CMakeFiles/graphics_asgn1.dir/src/sphere.cpp.o: ../src/main.h
 CMakeFiles/graphics_asgn1.dir/src/sphere.cpp.o: ../src/sphere.cpp

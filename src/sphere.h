@@ -17,7 +17,7 @@ public:
     float rotation;
     float radius;
     float r_angle;
-    // bounding_box_t bounding_box();
+    bounding_box_t bounding_box();
 
   private:
     VAO *object;

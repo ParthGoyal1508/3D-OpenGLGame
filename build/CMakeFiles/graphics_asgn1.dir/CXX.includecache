@@ -6,79 +6,95 @@
 
 #IncludeRegexTransform: 
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.cpp
 airplane.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.h
 cylinder.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
 ellipse.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/audio.cpp
+ao/ao.h
+-
+mpg123.h
+-
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.cpp
 ball.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/color.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/color.cpp
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/compass.cpp
+compass.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/compass.h
+main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/compass.h
+main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.cpp
 cylinder.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.cpp
 dashboard.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.cpp
 ellipse.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 math.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/math.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/math.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.cpp
 fuel.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 limits.h
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/input.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/input.cpp
 iostream
 -
 cmath
@@ -98,58 +114,70 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.cpp
 island.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 limits.h
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.cpp
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 timer.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.h
 ball.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ball.h
 cylinder.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/cylinder.h
 sphere.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.h
 ellipse.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/ellipse.h
 airplane.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/airplane.h
 water.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.h
 dashboard.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/dashboard.h
 island.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/island.h
 navigation.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.h
 fuel.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/fuel.h
 volcano.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.h
 rings.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.h
+parachute.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/parachute.h
+compass.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/compass.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 iostream
+-
+stdio.h
 -
 cmath
 -
 fstream
 -
 vector
+-
+string.h
+-
+signal.h
+-
+unistd.h
 -
 GL/glew.h
 -
@@ -162,19 +190,19 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.cpp
 navigation.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 limits.h
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/navigation.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/nonedit.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/nonedit.cpp
 iostream
 -
 cmath
@@ -194,9 +222,9 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/other_handlers.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/other_handlers.cpp
 iostream
 -
 cmath
@@ -216,59 +244,79 @@ glm/gtx/transform.hpp
 glm/gtc/matrix_transform.hpp
 -
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/parachute.cpp
+parachute.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/parachute.h
+main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/parachute.h
+main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.cpp
 rings.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/rings.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/score.cpp
+score.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/score.h
+main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/score.h
+main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.cpp
 sphere.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 math.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/math.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/math.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/sphere.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.cpp
 timer.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.h
 GLFW/glfw3.h
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/timer.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.cpp
 volcano.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 limits.h
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/volcano.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.cpp
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.cpp
 water.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 limits.h
 -
 
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/water.h
 main.h
-/drive2/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
+/drive1/sem4/Graphics/Assignment2/3D-OpenGL_Game/src/main.h
 

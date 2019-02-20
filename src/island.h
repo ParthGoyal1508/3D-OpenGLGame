@@ -18,6 +18,9 @@ public:
     void make_cuboid(float x, float y, float z);
     void make_sphere(float x, float y, float z, float radius);
     void tick();
+    float radius1, radius2, radius3;
+    bounding_box_t bounding_box();
+
 private:
     VAO *object;
     VAO *object2;

@@ -2,9 +2,13 @@
 #define MAIN_H
 
 #include <iostream>
+#include <stdio.h>
 #include <cmath>
 #include <fstream>
 #include <vector>
+#include <string.h>
+#include <signal.h>
+#include <unistd.h>
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -34,6 +38,7 @@ void keyboard(GLFWwindow *window, int key, int scancode, int action, int mods);
 void keyboardChar(GLFWwindow *window, unsigned int key);
 void mouseButton(GLFWwindow *window, int button, int action, int mods);
 void scroll_callback(GLFWwindow *window, double xoffset, double yoffset);
+void cursor_position_callback(GLFWwindow* window, double xpos, double ypos);
 
 // other_handlers.cpp
 void error_callback(int error, const char *description);
@@ -77,6 +82,10 @@ struct bounding_box_t {
 
 bool detect_collision(bounding_box_t a, bounding_box_t b);
 
+void heli_camera(float x, float y);
+void zoom_camera(int type);
+
+
 extern float screen_zoom, screen_center_x, screen_center_y;
 void reset_screen();
 
@@ -90,5 +99,14 @@ extern const color_t COLOR_FIRE;
 extern const color_t COLOR_SILVER;
 extern const color_t COLOR_DASHBOARD;
 extern const color_t COLOR_ENEMY;
+extern const color_t COLOR_DARKBLACK;
+
+extern bool sound;
+extern pid_t pid;
+
+// Audio
+void audio_init();
+void audio_play();
+void audio_close();
 
 #endif

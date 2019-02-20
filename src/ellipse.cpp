@@ -6,6 +6,10 @@ Ellipse::Ellipse(float x, float y, float z, float radius1, float radius2, float 
 {
     this->position = glm::vec3(x, y, z);
     this->rotation = 0;
+    
+    this->radius1 = radius1;
+    this->radius2 = radius2;
+    this->radius3 = radius3;
 
     const int n = 40;
     const int reqd = n * 100;
@@ -81,15 +85,15 @@ void Ellipse::set_position(float x, float y, float z) {
 }
 
 void Ellipse::tick() {
-    const double pi = 4 * atan(1);
-    double distraction = this->radius * sin(r_angle * pi / 180) + this->radius * cos(r_angle * pi / 180); 
-    this->r_angle += 0.5;
-    this->position.x = this->start.x + distraction;
-    this->position.z = this->start.z + distraction;
+    // const double pi = 4 * atan(1);
+    // double distraction = this->radius * sin(r_angle * pi / 180) + this->radius * cos(r_angle * pi / 180); 
+    // this->r_angle += 0.5;
+    // this->position.x = this->start.x + distraction;
+    // this->position.z = this->start.z + distraction;
 }
 
-// bounding_box_t Ellipse::bounding_box()
-// {
-//     bounding_box_t bbox = {this->position.x, this->position.y, this->position.z, 16, 16};
-//     return bbox;
-// }
+bounding_box_t Ellipse::bounding_box()
+{
+    bounding_box_t bbox = {this->position.x, this->position.y, this->position.z, 2*(this->radius1), 2*(this->radius2),2*(this->radius3)};
+    return bbox;
+}

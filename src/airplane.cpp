@@ -312,9 +312,10 @@ void Airplane::draw(glm::mat4 VP) {
     glm::mat4 translate = glm::translate (this->position);    // glTranslatef
     glm::mat4 rotate    = glm::rotate((float) (this->rotation * M_PI / 180.0f), glm::vec3(0, 1, 0));
     glm::mat4 rotate2    = glm::rotate((float) (this->rotation2 * M_PI / 180.0f), glm::vec3(0, 0, 1));
+    glm::mat4 rotate3    = glm::rotate((float) (this->rotation3 * M_PI / 180.0f), glm::vec3(0, 1, 0));
     // No need as coords centered at 0, 0, 0 of cube arouund which we waant to rotate
     // rotate          = rotate * glm::translate(glm::vec3(0, -0.6, 0));
-    Matrices.model *= (translate * rotate * rotate2);
+    Matrices.model *= (translate * rotate * rotate2 *rotate3);
     glm::mat4 MVP = VP * Matrices.model;
     glUniformMatrix4fv(Matrices.MatrixID, 1, GL_FALSE, &MVP[0][0]);
     draw3DObject(this->object);
@@ -358,11 +359,12 @@ void Airplane::move_backward(){
 }
 
 void Airplane::move_upward(){
-    // this->position.y += this-> speed;
-    this->position.y += 1;
+    if(this->position.y < 500)
+        this->position.y += 1;
 }
 
 void Airplane::move_downward(){
+    if(this->position.y > -80)
     this->position.y -= 1;
 }
 
@@ -371,6 +373,19 @@ void Airplane::tick() {
         this->rotation2 -= 0.25;
     else if(this->rotation2 < 0)
         this->rotation2 += 0.25;
+}
+
+void Airplane::speed_increase(){
+    if(this->speed < 6)
+        this->speed += 0.05;
+}
+
+void Airplane::speed_decrease(){
+    if(this->speed > 0 && this->speed_decreaseflag == 1){
+        this->speed -= 0.02; 
+        if(this->speed < 0)
+            this->speed = 0;
+    }
 }
 
 bounding_box_t Airplane::bounding_box() {

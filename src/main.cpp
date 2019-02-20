@@ -12,6 +12,8 @@
 #include "fuel.h"
 #include "volcano.h"
 #include "rings.h"
+#include "parachute.h"
+#include "compass.h"
 
 using namespace std;
 
@@ -23,6 +25,7 @@ GLFWwindow *window;
 * Customizable functions *
 **************************/
 
+// Initialisation
 Airplane airplane;
 Water sea;
 Dashboard dashboard;
@@ -33,22 +36,31 @@ vector<Ellipse> missiles;
 vector<Ellipse> airplane_missiles;
 vector<Fuel> fuel;
 vector<Volcano> volcano;
-Sphere sph;
 vector<Rings> rings;
 vector<int> checkpoint = {7,14,21,1,8,15,22,2,9,16,23,3,10,17,24,4,11,18,25,5,12,19,26,6,13,20,27};
+vector<Parachute> parachute;
+Compass compass;
+pid_t pid = 0;
+bool sound = true;
 
 
+//Variable declaration
 const double pi = 4 * atan(1);
 int view=1;
+float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
+float camera_rotation_angle = 0, camera_x = 0,camera_y = 8,camera_z = 18,target_x = 0 ,target_y = 8, target_z = 0;
 
+//keypress initialisation
 bool keypress = false;
 bool keypress_c = false;
 bool keypress_b = false;
 bool keypress_m = false;
+bool keypress_k = false;
+bool keypress_l = false;
+bool looping_flag = false;
+bool rolling_flag = false;
 
-float screen_zoom = 1, screen_center_x = 0, screen_center_y = 0;
-float camera_rotation_angle = 0, camera_x = 0,camera_y = 8,camera_z = 18,target_x = 0 ,target_y = 8, target_z = 0;
-
+//timer declaration
 Timer t60(1.0 / 60);
 
 /* Render the scene with openGL */
@@ -88,23 +100,41 @@ void draw() {
     sea.draw(VP);
     airplane.draw(VP);
     dashboard.draw(VP,view);
+    navigation.draw(VP);
+    compass.draw(VP,view);
+    dashboard.print_speed(((int) (airplane.speed * 10)), (int) (airplane.alt), (int) (airplane.fuel));
+
     for(int i=0;i<island.size();i++)
         island[i].draw(VP);
-    navigation.draw(VP);
+
     for(int i=0;i<bomb.size();i++)
         bomb[i].draw(VP);
+
     for(int i=0;i<missiles.size();i++)
         missiles[i].draw(VP);
+
     for(int i=0;i<airplane_missiles.size();i++)
         airplane_missiles[i].draw(VP);
+
     for(int i=0;i<fuel.size();i++)
         fuel[i].draw(VP);
+
     for(int i=0;i<volcano.size();i++)
         volcano[i].draw(VP);
+
     for(int i=0;i<rings.size();i++)
         rings[i].draw(VP);
-    //sph.draw(VP);
-    // cout << airplane.position.y <<endl;
+
+    for(int i=0;i<parachute.size();i++)
+        parachute[i].draw(VP);
+}
+
+bool detect_collision(bounding_box_t a, bounding_box_t b) {
+    return (abs(a.x - b.x) < (a.length + b.length)/2) && (abs(a.z - b.z) < (a.width + b.width)/2) && (abs(a.y - b.y) < (a.height + b.height)/2);
+}
+
+bool detect_collision_volcano(bounding_box_t a, bounding_box_t b) {
+    return (abs(a.x - b.x) < (a.length + b.length)/2) && (abs(a.z - b.z) < (a.width + b.width)/2) ;
 }
 
 int increment;
@@ -115,8 +145,17 @@ void missile_move(){
 
         if(missile.position.x < (island[navigation.checkpoint].position.x - 400 ) || missile.position.x > (island[navigation.checkpoint].position.x + 400) || missile.position.y < (island[navigation.checkpoint].position.y - 400 ) || missile.position.y > (island[navigation.checkpoint].position.y + 400 ))
             missiles.erase(missiles.begin()+i);
-
-        missiles[i].set_position(missile.position.x - 4 * sin((missile.theta) *(pi/180)) * sin(missile.phi * (pi/180)), missile.position.y + 4 * cos(missile.theta *(pi/180)), missile.position.z - 4 * sin((missile.theta) *(pi/180)) * cos(missile.phi * (pi/180)));
+        
+        if(detect_collision_volcano(missiles[i].bounding_box(), airplane.bounding_box())){
+            missiles.erase(missiles.begin()+i);
+            airplane.score -= 1;
+            if(airplane.score < 0){
+                cout << "YOU ARE DEAD\n";
+                quit(window);
+            }
+        }
+        else
+            missiles[i].set_position(missile.position.x - 4 * sin((missile.theta) *(pi/180)) * sin(missile.phi * (pi/180)), missile.position.y + 4 * cos(missile.theta *(pi/180)), missile.position.z - 4 * sin((missile.theta) *(pi/180)) * cos(missile.phi * (pi/180)));
     }
 }
 
@@ -150,8 +189,6 @@ void missile_release(){
 }
 
 bool bomb_collision(int i){
-    // cout << "X "<<bomb[i].position.x << " " <<island[navigation.checkpoint].position.x <<endl;
-    // cout << "Z "<<bomb[i].position.z << " " <<island[navigation.checkpoint].position.z <<endl;
     if((bomb[i].position.x < island[navigation.checkpoint].position.x + 10) && (bomb[i].position.x > island[navigation.checkpoint].position.x - 10))
         if((bomb[i].position.z < island[navigation.checkpoint].position.z + 10) && (bomb[i].position.z > island[navigation.checkpoint].position.z - 10))
             if(bomb[i].position.y < island[navigation.checkpoint].position.y + 85)
@@ -160,9 +197,6 @@ bool bomb_collision(int i){
 }
 
 void checkbomb_collision(){
-            // cout << "should change\n";
-            // cout << "checkpoint no "<<navigation.checkpoint <<endl;
-            // cout << "is checkpoint "<< island[navigation.checkpoint].ischeckpoint <<endl;
     for(int i=0;i<bomb.size();i++){
         if(bomb_collision(i)){
             cout << "change\n";
@@ -174,6 +208,7 @@ void checkbomb_collision(){
             navigation.checkpoint = j;
             island[navigation.checkpoint].ischeckpoint = 1;
             fuel.push_back(Fuel(island[navigation.checkpoint].position.x + 20, 20, island[navigation.checkpoint].position.z +25, COLOR_FIRE));
+            airplane.score += 30;
         }
     }
 }
@@ -199,6 +234,7 @@ void checkairplanemissile_collision(){
             navigation.checkpoint = j;
             island[navigation.checkpoint].ischeckpoint = 1;
             fuel.push_back(Fuel(island[navigation.checkpoint].position.x + 20, 20, island[navigation.checkpoint].position.z +25, COLOR_FIRE));
+            airplane.score += 20;
         }
     }
 }
@@ -219,7 +255,7 @@ void release_bomb(){
 void airplane_missilemove(){
     for(int i=0;i<airplane_missiles.size();i++){
         Ellipse missile = airplane_missiles[i];
-        if(missile.position.x < (island[navigation.checkpoint].position.x - 400 ) || missile.position.x > (island[navigation.checkpoint].position.x + 400) || missile.position.y < (island[navigation.checkpoint].position.y - 400 ) || missile.position.y > (island[navigation.checkpoint].position.y + 400 ))
+        if(missile.position.x < -3000 || missile.position.x > 3000 || missile.position.z < -3000 || missile.position.z > 3000 || missile.position.y < -80)
             airplane_missiles.erase(airplane_missiles.begin()+i);
         airplane_missiles[i].set_position(missile.position.x - 3 * sin(missile.theta * (pi/180)) * sin(missile.phi * (pi/180)), missile.position.y - 3 * cos(missile.theta * (pi/180)), missile.position.z - 3 * sin(missile.theta * (pi/180)) * cos(missile.phi * (pi/180)));
     }
@@ -247,24 +283,57 @@ void airplane_releasemissile(){
 
         airplane_missiles.push_back(missile);
     }
+
+    else{
+        Ellipse missile = Ellipse(airplane.position.x, airplane.position.y, airplane.position.z,2,1,1,COLOR_BLUE);
+
+        missile.theta=90;
+        missile.phi=airplane.rotation;
+
+        airplane_missiles.push_back(missile);
+    }
    
 }
 
+void looping(){
+    if(looping_flag){
+        airplane.rotation += 10;
+        if(airplane.rotation >= 360){
+            looping_flag = false;
+            airplane.rotation = 0;
+        }
+    }
+}
+
+void rolling(){
+    if(rolling_flag){
+        airplane.rotation2 += 10;
+        if(airplane.rotation2 >= 360){
+            rolling_flag = false ;
+            airplane.rotation2 = 0;
+        }
+    }
+}
+
 void tick_input(GLFWwindow *window) {
-    int c  = glfwGetKey(window, GLFW_KEY_C);
-    int a  = glfwGetKey(window, GLFW_KEY_A);
-    int d  = glfwGetKey(window, GLFW_KEY_D);
-    int w  = glfwGetKey(window, GLFW_KEY_W);
-    int s  = glfwGetKey(window, GLFW_KEY_S);
-    int b  = glfwGetKey(window, GLFW_KEY_B);
-    int m  = glfwGetKey(window, GLFW_KEY_M);
-    int left = glfwGetKey(window, GLFW_KEY_LEFT);
-    int right = glfwGetKey(window, GLFW_KEY_RIGHT);
-    int up = glfwGetKey(window, GLFW_KEY_UP);
-    int down = glfwGetKey(window, GLFW_KEY_DOWN);
+
+    airplane.speed_decreaseflag = 1;
+
+    int c  = glfwGetKey(window, GLFW_KEY_C);//camera change
+    int a  = glfwGetKey(window, GLFW_KEY_A);//tilt left
+    int d  = glfwGetKey(window, GLFW_KEY_D);//tilt right
+    int space  = glfwGetKey(window, GLFW_KEY_SPACE);// move up
+    int s  = glfwGetKey(window, GLFW_KEY_S);//move down
+    int mouse_right  = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_RIGHT);//bomb
+    int mouse_left = glfwGetMouseButton(window, GLFW_MOUSE_BUTTON_LEFT);//missile
+    int left = glfwGetKey(window, GLFW_KEY_Q);//move left
+    int right = glfwGetKey(window, GLFW_KEY_E);//move right
+    int w = glfwGetKey(window, GLFW_KEY_W);//move forward
+    int k = glfwGetKey(window, GLFW_KEY_K);//looping the loop
+    int l = glfwGetKey(window, GLFW_KEY_L);//barrel roll
     
     if (c && !keypress_c){
-        view=(view)%4+1;
+        view=(view)%5+1;
         keypress_c = true;
     }
     if (c == GLFW_RELEASE && keypress_c==true){
@@ -279,8 +348,7 @@ void tick_input(GLFWwindow *window) {
         airplane.tilt_right();
     }
 
-
-    if (w){
+    if (space){
         airplane.move_upward();
     }
 
@@ -296,51 +364,86 @@ void tick_input(GLFWwindow *window) {
         airplane.move_right();
     }
 
-    if (up){
-        airplane.move_forward();
-        // sea.position.x = sea.position.x - 2 * sin(airplane.rotation);
-        // sea.position.z = sea.position.z - 2 * cos(airplane.rotation);    
+    if (w){
+        airplane.speed_increase();
+        airplane.speed_decreaseflag = 0;
     }
     
-    if (down){
-        airplane.move_backward();
-    }
-
-    if (b && !keypress_b){
+    if (mouse_right &&!keypress_b){
         keypress_b = true;
         release_bomb();
     }
-    if(b == GLFW_RELEASE && keypress_b == true){
+    if (mouse_right == GLFW_RELEASE && keypress_b == true){
         keypress_b = false;
     }
 
-    if (m && !keypress_m){
+    if (mouse_left && !keypress_m){
         keypress_m = true;
         airplane_releasemissile();
     }
-    if(m == GLFW_RELEASE && keypress_m == true){
+    if (mouse_left == GLFW_RELEASE && keypress_m == true){
         keypress_m = false;
+    }
+
+    if (k && !keypress_k){
+        looping_flag =true;
+        keypress_k =true;
+        looping();
+    }
+
+    if(k == GLFW_RELEASE && keypress_k == true){
+        keypress_k = false;
+    }
+
+    if (l && !keypress_l){
+        rolling_flag = true;
+        keypress_l =true;
+        rolling();
+    }
+
+    if(l == GLFW_RELEASE && keypress_l == true){
+        keypress_l = false;
     }
     
     
 }
 
-bool detect_collision(bounding_box_t a, bounding_box_t b) {
-    return (abs(a.x - b.x) < (a.length + b.length)/2) && (abs(a.z - b.z) < (a.width + b.width)/2) && (abs(a.y - b.y) < (a.height + b.height)/2);
+
+
+void airplanemissileparachute_collision(){
+    for(int i=0;i<airplane_missiles.size();i++){
+        for(int j=0;j<parachute.size();j++){
+            if(detect_collision(airplane_missiles[i].bounding_box(),parachute[j].bounding_box())){
+                parachute[j].active =0;
+                airplane_missiles.erase(airplane_missiles.begin()+i);
+                airplane.score += 15;
+    }
+        }
+    }
+}
+
+void ringplane_collision(){
+    for(int i=0;i<rings.size();i++){
+        if(detect_collision(rings[i].bounding_box(),airplane.bounding_box())){
+            if(rings[i].active == 1)
+                airplane.score += 10;
+            rings[i].active = 0;
+        }
+    }
 }
 
 void fuelplane_collision(){
     for(int i=0;i<fuel.size();i++){
         if(detect_collision(fuel[i].bounding_box(),airplane.bounding_box())){
-            cout << "hello";
+            airplane.fuel += 10;
+            if(airplane.fuel > 100)
+                airplane.fuel = 100;
             fuel.erase(fuel.begin()+i);
         }
     }
 }
 
-bool detect_collision_volcano(bounding_box_t a, bounding_box_t b) {
-    return (abs(a.x - b.x) < (a.length + b.length)/2) && (abs(a.z - b.z) < (a.width + b.width)/2) ;
-}
+
 
 void detect_volcano_collision(){
     for(int i=0;i<volcano.size();i++){
@@ -360,18 +463,9 @@ void set_navigation(){
     if(posx > navigation.position.x)
         angle *= -1;
     navigation.rotation = angle;
-//     cout << "angle "<<navigation.rotation<<endl;
-//     cout << "posx "<<posx<<endl;
-//     cout << "posz "<<posz<<endl;
-//     cout << "navigation posx "<<navigation.position.x<<endl;
-//     cout << "navigation posz "<<navigation.position.z<<endl;
 }
 
 void view_camera(){
-
-    // cout << "rot "<< airplane.rotation <<endl;
-    // cout << "x "<< airplane.position.x <<endl;
-    // cout << "z "<< airplane.position.z <<endl;
 
     //follow view
     if (view == 1){
@@ -384,15 +478,17 @@ void view_camera(){
         target_z = airplane.position.z;
 
         dashboard.set_position(target_x, target_y + 10, target_z);
-        // dashboard.position.x = target_x ;
-        // dashboard.position.y = target_y + 10;
-        // dashboard.position.z = target_z ;
-        dashboard.rotation = airplane.rotation;
-
+        compass.set_position(target_x - 5 * sin(airplane.rotation * (pi/180)) -  10 * cos(airplane.rotation * (pi/180)), target_y + 10, target_z - 5 * cos(airplane.rotation * (pi/180)) + 10 * sin(airplane.rotation * (pi/180)));
         navigation.set_position(airplane.position.x - 5 * sin(airplane.rotation * (pi/180)),target_y + 12,airplane.position.z  - 5 * cos(airplane.rotation * (pi/180)));
+        
+        dashboard.rotation = airplane.rotation;
+        compass.rotation = airplane.rotation;
+        compass.rotation2 = 0;
+        dashboard.rotation2 = 0;
+
     }
 
-    //camera view
+    //top view
     else if (view == 2){
         camera_x = airplane.position.x + 20 * sin(airplane.rotation * (pi/180));
         camera_y = airplane.position.y + 50;
@@ -404,8 +500,11 @@ void view_camera(){
 
         dashboard.set_position(target_x + 5 * sin(airplane.rotation * (pi/180)), target_y + 2, target_z + 5 * cos(airplane.rotation * (pi/180)));
         dashboard.rotation = airplane.rotation;
-        // dashboard.set_position(airplane.position.x,airplane.position.y + 2 ,airplane.position.z);
+        compass.set_position(target_x - 20 * sin(airplane.rotation * (pi/180)) -  20 * cos(airplane.rotation * (pi/180)), target_y + 10, target_z - 20 * cos(airplane.rotation * (pi/180)) + 20 * sin(airplane.rotation * (pi/180)));
         navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
+
+        compass.rotation = 0;
+        compass.rotation2 = 90;
     }
 
     //plane view
@@ -418,13 +517,14 @@ void view_camera(){
         target_y = airplane.position.y ;
         target_z = airplane.position.z - 20 * cos(airplane.rotation * (pi/180));
 
-        // dashboard.position.x = target_x;
-        // dashboard.position.y = target_y + 7;
-        // dashboard.position.z = target_z ;
-        dashboard.set_position(target_x, target_y + 7, target_z);
-        dashboard.rotation = airplane.rotation;
+        dashboard.set_position(target_x, target_y + 10, target_z);
+        compass.set_position(target_x - 5 * sin(airplane.rotation * (pi/180)) -  10 * cos(airplane.rotation * (pi/180)), target_y + 10, target_z - 5 * cos(airplane.rotation * (pi/180)) + 10 * sin(airplane.rotation * (pi/180)));
+        navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y + 8,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
 
-       navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y + 10,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
+        dashboard.rotation = airplane.rotation;
+        compass.rotation = airplane.rotation;
+        compass.rotation2 = 0;
+        dashboard.rotation2 = 0;
 
     }
 
@@ -438,16 +538,59 @@ void view_camera(){
         target_y = airplane.position.y;
         target_z = airplane.position.z;
 
-       navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y ,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
-
+        navigation.set_position(airplane.position.x - 20 * sin(airplane.rotation * (pi/180)),target_y ,airplane.position.z  - 20 * cos(airplane.rotation * (pi/180)));
 
     }
 
     //helicopter-cam view
-    else if( view == 5){
-        //write code here
+    else if( view == 5 && keypress_c == true){
+        // write code here
+        camera_x = airplane.position.x + 20 * sin(airplane.rotation * (pi/180)) ;
+        camera_y = airplane.position.y + 8 ;
+        camera_z = airplane.position.z + 20 * cos(airplane.rotation * (pi/180));
+
+        target_x = airplane.position.x ;
+        target_y = airplane.position.y + 8;
+        target_z = airplane.position.z;
+
+        dashboard.set_position(target_x, target_y + 10, target_z);
+        compass.set_position(target_x - 5 * sin(airplane.rotation * (pi/180)) -  10 * cos(airplane.rotation * (pi/180)), target_y + 10, target_z - 5 * cos(airplane.rotation * (pi/180)) + 10 * sin(airplane.rotation * (pi/180)));
+        navigation.set_position(airplane.position.x - 5 * sin(airplane.rotation * (pi/180)),target_y + 12,airplane.position.z  - 5 * cos(airplane.rotation * (pi/180)));
+        
+        dashboard.rotation = airplane.rotation;
+        compass.rotation = airplane.rotation;
+        compass.rotation2 = 0;
+        dashboard.rotation2 = 0;
+
     }
     
+}
+
+int score_increment=0;
+void airplanescore_increment(){
+    score_increment = (score_increment+1)%200;
+    if(score_increment == 0)
+        airplane.score += 1;
+}
+
+void airplane_alt(){
+    airplane.alt = (int) (airplane.position.y - sea.position.y);
+    if(airplane.alt == 0){
+        cout << "GAME OVER, YOU ARE DEAD\n";
+        quit(window);
+    }
+}
+
+int fuel_decrement=0;
+void fuel_update(){
+    fuel_decrement = (fuel_decrement+1)%100;
+    if(fuel_decrement == 0 && airplane.speed_decreaseflag == 0){
+        airplane.fuel -= 1;
+        if(airplane.fuel <= 0){
+            cout << "GAME OVER, FUEL EXHAUSTED AND YOU ARE DEAD\n";
+            quit(window);
+        }
+    }
 }
 
 void tick_elements() {
@@ -461,12 +604,21 @@ void tick_elements() {
     checkairplanemissile_collision();
     fuelplane_collision();
     detect_volcano_collision();
-    // navigation.tick();
+    ringplane_collision();
+    airplanemissileparachute_collision();
     airplane.tick();
     fuel[0].tick();
     for(int i=0;i<island.size();i++)
         island[i].tick(); 
-    // camera_rotation_angle += 1;
+    for(int i=0;i<parachute.size();i++)
+        parachute[i].tick(); 
+    airplanescore_increment();
+    airplane_alt();
+    airplane.move_forward();
+    airplane.speed_decrease();
+    fuel_update();
+    looping();
+    rolling();
 }
 
 double fRand(double fMin, double fMax)
@@ -505,8 +657,6 @@ void initGL(GLFWwindow *window, int width, int height) {
         island.push_back(Island(x,-140,z, COLOR_GREEN));
     }
     island[0].ischeckpoint = 1;
-    // navigation.checkpoint = 0;
-    sph = Sphere(0,0,-100,10,COLOR_ENEMY);
     navigation = Navigation(0,0,-100,COLOR_ENEMY);
     fuel.push_back(Fuel(island[0].position.x+20,20,island[0].position.z+25,COLOR_FIRE));
     for(int i=0;i<2;i++){
@@ -529,11 +679,33 @@ void initGL(GLFWwindow *window, int width, int height) {
         double z =fRand(0,3000);
         volcano.push_back(Volcano(x,sea.position.y,z, COLOR_FIRE));
     }
-    for(int i=0;i<10;i++){
+    for(int i=0;i<20;i++){
         double x =fRand(-3000,3000);
         double z =fRand(-3000,3000);
         rings.push_back(Rings(x,50,z,10,8,COLOR_GREEN));
     }
+    for(int i=0;i<5;i++){
+        double x = fRand(0,3000);
+        double z = fRand(0,3000);
+        parachute.push_back(Parachute(x,50,z,10,10,10,COLOR_BLUE));
+    }
+    for(int i=0;i<5;i++){
+        double x = fRand(0,3000);
+        double z = fRand(-3000,0);
+        parachute.push_back(Parachute(x,50,z,10,10,10,COLOR_BLUE));
+    }
+    for(int i=0;i<5;i++){
+        double x = fRand(-3000,0);
+        double z = fRand(-3000,0);
+        parachute.push_back(Parachute(x,50,z,10,10,10,COLOR_BLUE));
+    }
+    for(int i=0;i<5;i++){
+        double x = fRand(-3000,0);
+        double z = fRand(0,3000);
+        parachute.push_back(Parachute(x,50,z,10,10,10,COLOR_BLUE));
+    }
+    compass = Compass(-10,10,-10,2,COLOR_BLACK);
+    
 
     cout << cos(-52.39)<<endl;
     cout << cos(52.39)<<endl;
@@ -570,6 +742,18 @@ int main(int argc, char **argv) {
 
     initGL (window, width, height);
 
+    pid = fork();
+    if (pid == 0)
+    {
+        while (sound)
+        {
+            audio_init();
+            audio_play();
+            audio_close();
+        }
+        _exit(0);
+    }
+
     /* Draw in loop */
     while (!glfwWindowShouldClose(window)) {
         // Process timers
@@ -585,10 +769,31 @@ int main(int argc, char **argv) {
             char final_str[120] = "Checkpoints Remaining : ";
             strcat(final_str, str1);
 
-            // char str2[10];
-            // sprintf(str2, "%d", (player.score / 500));
-            // strcat(final_str, "      Lives : ");
-            // strcat(final_str, str2);
+            char str2[10];
+            sprintf(str2, "%d", (airplane.score));
+            strcat(final_str, "      Score : ");
+            strcat(final_str, str2);
+
+            char str3[10];
+            sprintf(str3, "%d", ((int) (airplane.speed * 10)));
+            strcat(final_str, "      Speed : ");
+            strcat(final_str, str3);
+
+            char str4[10];
+            sprintf(str4, "%d", ((int) airplane.alt));
+            strcat(final_str, "      Alt : ");
+            strcat(final_str, str4);
+
+            char str5[10];
+            sprintf(str5, "%d", ((int) airplane.fuel));
+            strcat(final_str, "      Fuel : ");
+            strcat(final_str, str5);
+
+            char str6[10];
+            sprintf(str6, "%d", ((int) view));
+            strcat(final_str, "      View : ");
+            strcat(final_str, str6);
+            
 
             // Swap Frame Buffer in double buffering
             glfwSwapBuffers(window);
@@ -607,10 +812,38 @@ int main(int argc, char **argv) {
 
 
 void reset_screen() {
-    float top    = screen_center_y + 4 / screen_zoom;
-    float bottom = screen_center_y - 4 / screen_zoom;
-    float left   = screen_center_x - 4 / screen_zoom;
-    float right  = screen_center_x + 4 / screen_zoom;
     // Matrices.projection = glm::ortho(left, right, bottom, top, -50.0f, 500.0f);
     Matrices.projection = glm::perspective(45.0f, 1.0f, 10.0f, 10000.0f);
+}
+
+void heli_camera(float x, float y){
+    if (view == 5){
+        target_x = airplane.position.x + x - 400;
+            if(y - 400 <= 0 ){
+                target_y = airplane.position.y+ (400-y)/2;
+            }
+    }
+    else{
+        return;
+    }
+}
+
+void zoom_camera(int type){
+
+    if(view==5){
+         float n = target_z-camera_z;
+        if(type==1){
+            if(camera_z - target_z > 10)
+                camera_z-=5;
+        }
+        else if(type==-1){
+            if(camera_z - target_z < 200)
+                camera_z+=5;
+        }
+        camera_x = (target_x - camera_x) * (camera_z - target_z) / n + target_x;
+        camera_y = (target_y - camera_y) * (camera_z - target_z) / n + target_y;
+    }
+    else {
+       return;
+    }
 }
