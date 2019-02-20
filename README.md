@@ -1,26 +1,23 @@
 # JetPack Funride using OpenGL
 
-This is a game similar to the Jetpack Joyride where in the player has a jetpack and has to move up and down and dodge enemies while collecting coins in the way. The standard game consists of the following:
-  - Dodge firelines and firebeams
-  - Collect coins and powerups
-  - Try to reach the maximum score by covering maximum distance and collecting maximum coins on the way
+This is a game similar to to emulate a jet fighter plane game. The standard game consists of the following:
+  - Multiple views
+  - Total of 28 Checkpoints in Game
+  - Try to reach the maximum score by covering maximum distance and by passing through circular ring, by shooting enemies, shooting parachutes.
 
 # New Features!
 
-  - The player can also move left and right
-  - Player has water balloons which he/she can use to extinguish firelines and firebeams.
-  - New enemies like the Viserion, which follows the player and throws ice, and the Boomerang have been added
-  - Shields and Health Pickups
-  - Magnets which will attract the player towards itself and hamper its movement
-  - Ring Bridge which is allow the player to slide along it to avoid enemies
+  - To Know All the Features go through the Assignment2.pdf 
 
 # Installation
 
-Jetpack Funride requires C++ and OpenGl to run.
+Jet Fighter Simulation requires C++ and OpenGl to run.
 The following development packages of the following libraries should be installed:
  - GLEW
  - GLFW3
  - GLM
+ - AO
+ - libmpg123
 
 Installation instructions
 ### For Fedora
@@ -54,6 +51,7 @@ If you want to make some edits then make sure to run the following commands to c
 ```
 $ cd build
 $ make all
+$ ./graphics_asgn1
 ```
 
 # Controls
