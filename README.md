@@ -1,4 +1,4 @@
-# JetPack Funride using OpenGL
+# JetFighter Simulator using OpenGL
 
 This is a game similar to to emulate a jet fighter plane game. The standard game consists of the following:
   - Multiple views
